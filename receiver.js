@@ -8,6 +8,9 @@ var emitter = new EventEmitter({
 });
 
 emitter.on('event-name', function (data) { 
+	music.stop();
 	console.log('Doorbell!'); 
-	music.play();
+	setTimeout(function () {
+		music.play();
+	}, 100 );
 });

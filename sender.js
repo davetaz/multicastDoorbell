@@ -1,6 +1,6 @@
 var EventEmitter = require('multicast-events').EventEmitter;
 var buttons = require('rpi-gpio-buttons')([40]);
-buttons.setTiming({ pressed: 400 });
+buttons.setTiming({ pressed: 40 });
 
 var emitter = new EventEmitter({
   name: 'Doorbell',
