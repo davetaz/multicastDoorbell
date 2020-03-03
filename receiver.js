@@ -1,27 +1,32 @@
 var Sound = require('node-aplay');
-var EventEmitter = require('multicast-events').EventEmitter;
+var dgram = require('dgram');
+var s = dgram.createSocket('udp4');
 var music = new Sound('/home/pi/multicastDoorbell/doorbell-2.wav');
 
 var playing = false;
 
-var emitter = new EventEmitter({
-  name: 'Doorbell',
-  foreignOnly: true
+var MULTICAST_IP = "225.0.0.1";
+
+s.bind(8001, function() {
+  s.addMembership(MULTICAST_IP);
+  console.log("listening on all addresses");
+});
+
+s.on("message", function (msg, rinfo) {
+  console.log("server got: " + msg + " from " +
+  rinfo.address + ":" + rinfo.port);
+  if (playing) {
+        music.stop();
+        setTimeout(function () {
+                music.play(); // pause the music after five seconds
+        }, 100);
+  } else {
+        music.play();
+        playing = true;
+  }
 });
 
 music.on('complete', function () {
 	playing = false;	
 });
 
-emitter.on('event-name', function (data) { 
-	console.log('Doorbell!');
-	if (playing) {
-		music.stop();
-		setTimeout(function () {
-    			music.play(); // pause the music after five seconds 
-		}, 100);
-	} else {
-		music.play();
-		playing = true;
-	}
-});

@@ -6,10 +6,6 @@
 	},
 	"main": "app.js",
 	"dependencies": {
-		"exec": ">=0.2.0",
-		"debug": ">=1.0.0",
-		"exec": "^0.2.1",
-		"multicast-events": ">=2.0.0",
 		"node-aplay": ">=1.0.0",
 		"rpi-gpio-buttons": ">=1.0.0"
 	}
