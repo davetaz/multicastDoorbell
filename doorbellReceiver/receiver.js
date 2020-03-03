@@ -1,7 +1,8 @@
 var Sound = require('node-aplay');
 var dgram = require('dgram');
 var s = dgram.createSocket('udp4');
-var music = new Sound('/home/pi/multicastDoorbell/doorbell-2.wav');
+const path = require('path');
+var music = new Sound(path.join(__dirname, 'doorbell-2.wav'));
 
 var playing = false;
 

@@ -1,0 +1,14 @@
+{
+	"name": "multicastDoorbell",
+	"version": "0.1.0",
+	"engines": {
+		"node": ">=4.5.0"
+	},
+	"main": "app.js",
+	"build": {
+		"appId": "com.multicastDoorbell.id"
+	},
+	"dependencies": {
+		"rpi-gpio-buttons": ">=1.0.0"
+	}
+}

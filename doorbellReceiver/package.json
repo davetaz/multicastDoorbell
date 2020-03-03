@@ -5,8 +5,11 @@
 		"node": ">=4.5.0"
 	},
 	"main": "app.js",
+	"build": {
+		"appId": "com.multicastDoorbell.id"
+	},
 	"dependencies": {
 		"node-aplay": ">=1.0.0",
-		"rpi-gpio-buttons": ">=1.0.0"
+		"node-notifier": ">=1.0.0"
 	}
 }
