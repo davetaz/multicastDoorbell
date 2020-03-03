@@ -2,7 +2,7 @@
 Description=Node.js Doorbell Receiver
 
 [Service]
-ExecStart=/usr/local/bin/node /home/pi/multicastDoorbell/receiver.js
+ExecStart=/usr/local/bin/node /home/pi/multicastDoorbell/doorbellReceiver/receiver.js
 # Required on some systems
 #WorkingDirectory=/opt/nodeserver
 Restart=always

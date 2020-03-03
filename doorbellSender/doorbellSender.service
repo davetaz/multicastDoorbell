@@ -2,7 +2,7 @@
 Description=Node.js Doorbell Sender
 
 [Service]
-ExecStart=/usr/bin/node /home/pi/multicastDoorbell/sender.js
+ExecStart=/usr/bin/node /home/pi/multicastDoorbell/doorbellSender/sender.js
 # Required on some systems
 #WorkingDirectory=/opt/nodeserver
 Restart=always
