@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"node-aplay": ">=1.0.0",
-		"node-notifier": ">=1.0.0"
+		"node-notifier": ">=1.0.0",
+		"onoff": ">=1.0.0"		
 	}
 }
